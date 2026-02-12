@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <base href="/raha/">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <meta name="language" content="en-ZA" />
@@ -818,37 +817,37 @@
 <body>
 
   <!-- HEADER -->
-  <header id="header">
+  <header id="header" role="banner">
     <div class="container header-inner">
       <div class="logo">
         <a href="/home/" aria-label="RAHA Home">
           <img src="../logo.jpeg" alt="RAHA Logo" loading="lazy">
         </a>
       </div>
-      <nav>
+      <nav role="navigation" aria-label="Main navigation">
         <ul>
-          <li><a href="./">Home</a></li>              <!-- Points to index.html in root -->
-          <li><a href="product/">Products</a></li>    <!-- Points to /product/index.html -->
-          <li><a href="about/">About</a></li>        <!-- Points to /about/index.html -->
-          <li><a href="contact/">Contact</a></li>    <!-- Points to /contact/index.html -->
+          <li><a href="/home/">Home</a></li>
+          <li><a href="/product/">Products</a></li>
+          <li><a href="/about/">About</a></li>
+          <li><a href="/contact/">Contact</a></li>
         </ul>
-        <div class="hamburger" id="hamburger">
+        <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
           <div class="bar"></div>
           <div class="bar"></div>
           <div class="bar"></div>
-        </div>
+        </button>
       </nav>
+    </div>
 
     <!-- MOBILE NAV -->
-    <div class="mobile-nav" id="mobileNav">
+    <div class="mobile-nav" id="mobileNav" role="navigation" aria-label="Mobile navigation">
       <ul>
-        <li><a href="./">Home</a></li>
+        <li><a href="/home/">Home</a></li>
         <li><a href="/product/">Products</a></li>
         <li><a href="/about/">About</a></li>
         <li><a href="/contact/">Contact</a></li>
       </ul>
     </div>
-  </header>
 
     <!-- OVERLAY -->
     <div class="overlay" id="navOverlay" aria-hidden="true"></div>
@@ -1019,10 +1018,10 @@
       });
     });
 
-    // ✅ FIXED: Logo click redirects to main index.html (homepage)
+    // Logo click
     document.querySelector('.logo a').addEventListener('click', e => {
-      e.preventDefault(); // Stop default link behavior
-      window.location.href = '/raha/'; // Redirect to homepage
+      e.preventDefault();
+      window.location.href = '/home/';
     });
 
     // Smooth scroll
