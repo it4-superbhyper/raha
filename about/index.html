@@ -818,30 +818,29 @@
 <body>
 
   <!-- HEADER -->
-  <header id="header" role="banner">
+  <header id="header">
     <div class="container header-inner">
       <div class="logo">
         <a href="/home/" aria-label="RAHA Home">
           <img src="../logo.jpeg" alt="RAHA Logo" loading="lazy">
         </a>
       </div>
-      <nav role="navigation" aria-label="Main navigation">
+      <nav>
         <ul>
           <li><a href="./">Home</a></li>              <!-- Points to index.html in root -->
           <li><a href="product/">Products</a></li>    <!-- Points to /product/index.html -->
           <li><a href="about/">About</a></li>        <!-- Points to /about/index.html -->
           <li><a href="contact/">Contact</a></li>    <!-- Points to /contact/index.html -->
         </ul>
-        <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
+        <div class="hamburger" id="hamburger">
           <div class="bar"></div>
           <div class="bar"></div>
           <div class="bar"></div>
-        </button>
+        </div>
       </nav>
-    </div>
 
     <!-- MOBILE NAV -->
-    <div class="mobile-nav" id="mobileNav" role="navigation" aria-label="Mobile navigation">
+    <div class="mobile-nav" id="mobileNav">
       <ul>
         <li><a href="./">Home</a></li>
         <li><a href="/product/">Products</a></li>
@@ -849,6 +848,7 @@
         <li><a href="/contact/">Contact</a></li>
       </ul>
     </div>
+  </header>
 
     <!-- OVERLAY -->
     <div class="overlay" id="navOverlay" aria-hidden="true"></div>
