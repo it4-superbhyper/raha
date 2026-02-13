@@ -14,18 +14,18 @@
   
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://www.raha.co.za/about/">
+  <meta property="og:url" content="https://www.raha.co.za/about/  ">
   <meta property="og:title" content="RAHA | About Us">
   <meta property="og:description" content="Learn about RAHA: South Africa's trusted house brand for household essentials. Founded in 2023, proudly manufactured in KZN, supporting local communities with eco-conscious products.">
-  <meta property="og:image" content="https://www.raha.co.za/og-about.jpg">
+  <meta property="og:image" content="https://www.raha.co.za/og-about.jpg  ">
   <meta property="og:site_name" content="RAHA">
   
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:url" content="https://www.raha.co.za/about/">
+  <meta name="twitter:url" content="https://www.raha.co.za/about/  ">
   <meta name="twitter:title" content="RAHA | About Us">
   <meta name="twitter:description" content="Learn about RAHA: South Africa's trusted house brand for household essentials. Founded in 2023, proudly manufactured in KZN, supporting local communities with eco-conscious products.">
-  <meta name="twitter:image" content="https://www.raha.co.za/og-about.jpg">
+  <meta name="twitter:image" content="https://www.raha.co.za/og-about.jpg  ">
   
   <!-- Favicon -->
   <link rel="icon" href="/favicon.ico" type="image/x-icon">
@@ -35,17 +35,17 @@
   <link rel="preload" href="../logo.jpeg" as="image">
   
   <!-- DNS Prefetch -->
-  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
-  <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com  ">
+  <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com  ">
   
   <!-- Stylesheets -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css  "/>
+  <link rel="preconnect" href="https://fonts.googleapis.com  ">
+  <link rel="preconnect" href="https://fonts.gstatic.com  " crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter  :wght@400;500;600;700;800&display=swap" rel="stylesheet">
   
   <!-- Canonical URL -->
-  <link rel="canonical" href="https://www.raha.co.za/about/">
+  <link rel="canonical" href="https://www.raha.co.za/about/  ">
 
   <style>
     :root {
@@ -284,7 +284,6 @@
       align-items: center;
       justify-content: center;
       overflow: hidden;
-      background: linear-gradient(135deg, #f0f7ff 0%, #e6f2ff 100%);
     }
     
     .hero::before {
@@ -294,8 +293,40 @@
       left: 0;
       right: 0;
       bottom: 0;
-      background: linear-gradient(rgba(15, 61, 122, 0.1), rgba(15, 61, 122, 0.15));
+      background: linear-gradient(135deg, rgba(15, 61, 122, 0.85) 0%, rgba(15, 61, 122, 0.65) 50%, rgba(0, 166, 81, 0.55) 100%);
       z-index: 1;
+    }
+    
+    .hero-slides {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+    
+    .slide {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      opacity: 0;
+      transition: opacity 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+      transform: scale(1.05);
+    }
+    
+    .slide.active {
+      opacity: 1;
+      animation: slowZoom 10s ease-out forwards;
+    }
+    
+    @keyframes slowZoom {
+      from { transform: scale(1.05); }
+      to { transform: scale(1); }
     }
     
     .hero-content {
@@ -646,81 +677,26 @@
       background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
     }
     
-    .footer-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 3rem;
-      margin-bottom: 3rem;
-    }
-    
-    .footer-col h4 {
-      color: var(--gold);
-      margin-bottom: 1.5rem;
-      font-size: 1.1rem;
-      font-weight: 700;
-      letter-spacing: -0.01em;
-    }
-    
-    .footer-col p {
-      color: rgba(255, 255, 255, 0.8);
-      margin-bottom: 1.5rem;
-      line-height: 1.7;
-    }
-    
-    .footer-links {
-      list-style: none;
-    }
-    
-    .footer-links li {
-      margin-bottom: 0.9rem;
-    }
-    
-    .footer-links a {
-      color: rgba(255, 255, 255, 0.7);
-      transition: var(--transition-base);
-      display: inline-block;
-      font-size: 0.95rem;
-    }
-    
-    .footer-links a:hover {
-      color: var(--gold);
-      transform: translateX(5px);
-    }
-    
-    .social-links {
+    .footer-content {
       display: flex;
-      gap: 1rem;
-      margin-top: 1.5rem;
-    }
-    
-    .social-links a {
-      width: 44px;
-      height: 44px;
-      background: rgba(255, 255, 255, 0.1);
-      backdrop-filter: blur(10px);
-      border-radius: 50%;
-      display: flex;
+      flex-direction: column;
       align-items: center;
-      justify-content: center;
-      color: var(--white);
-      transition: var(--transition-smooth);
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      text-align: center;
     }
     
-    .social-links a:hover {
-      background: linear-gradient(135deg, var(--gold), var(--gold-dark));
-      color: var(--navy);
-      transform: translateY(-5px);
-      box-shadow: 0 8px 16px rgba(212, 175, 55, 0.3);
-      border-color: transparent;
+    .footer-logo {
+      margin-bottom: 1.5rem;
+    }
+    
+    .footer-logo img {
+      height: 48px;
+      filter: brightness(1.1);
     }
     
     .copyright {
-      text-align: center;
-      padding-top: 2.5rem;
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
       font-size: 0.9rem;
-      color: rgba(255, 255, 255, 0.6);
+      opacity: 0.7;
+      margin-top: 1.5rem;
     }
 
     /* RESPONSIVE */
@@ -742,9 +718,8 @@
       }
       
       .hero {
-        height: auto;
         min-height: 600px;
-        padding: 8rem 0;
+        padding: 0 1rem;
       }
       
       .hero-content {
@@ -770,22 +745,23 @@
       }
       
       .values-grid,
-      .factory-grid,
-      .initiative-grid {
+      .stats-grid {
         grid-template-columns: 1fr;
         gap: 2rem;
+      }
+      
+      .factory-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
       }
       
       .factory-image {
         height: 280px;
       }
       
-      .stats-grid {
+      .initiative-grid {
+        grid-template-columns: 1fr;
         gap: 2rem;
-      }
-      
-      .stat-number {
-        font-size: 2.5rem;
       }
     }
 
@@ -965,15 +941,17 @@
   </section>
 
   <!-- FOOTER -->
-  <footer role="contentinfo">
+  <footer>
     <div class="container">
-      <div class="footer-grid">
-
-
-
-      </div>
-      <div class="copyright">
-        &copy; 2026 RAHA Brands (Pty) Ltd. All rights reserved.
+      <div class="footer-content">
+        <div class="footer-logo">
+          <a href="/home/">
+            <img src="../logo.jpeg" alt="RAHA Logo" />
+          </a>
+        </div>
+        <p>© 2026 RAHA Brands (Pty) Ltd. All rights reserved.</p>
+        <p style="margin-top: 0.5rem; font-size: 0.9rem; opacity: 0.7;">
+        </p>
       </div>
     </div>
   </footer>
@@ -1037,4 +1015,3 @@
   </script>
 </body>
 </html>
-
